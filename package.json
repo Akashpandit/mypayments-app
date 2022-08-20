@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "type":"module",
+  "engines": {
+    "node":"16.x",
+    "npm":"8.x"
+  },
   "scripts": {
     "start": "nodemon --experimental-modules --es-module-specifier-resolution=node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
