@@ -3,7 +3,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from 'cors';
-import { path } from "path";
+import path from 'path';
 
 import paymentRoute from "./routes/payment-routes";
 import clientRoute from "./routes/client-routes"
@@ -26,9 +26,6 @@ if (process.env.NODE_ENV === 'production') {
 app.use("/api/payment", paymentRoute);
 app.use("/api/client", clientRoute);
 
-app.use((req, res) => {
-    res.status(404).send("<h3>Page not found</h3>");
-})
 
 mongoose.connect(process.env.MONGO_CONNECTION_URL)
     .then(() => app.listen(PORT))
